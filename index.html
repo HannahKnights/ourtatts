@@ -1,0 +1,148 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>OurTatts</title>
+        <link href="style.css" rel="stylesheet" type="text/css" />
+        <meta name="viewport" content="width=device-width, initial-scale=0.60">
+    </head>
+    <body>
+        <div id="mask">
+        </div>
+        <div id="image_rollover">
+            enquire
+        </div>
+        <div id="the_tatts" class="the_tatts_page">
+            <div id="the_tatts_title">
+                OurTatts
+            </div>
+            <div class="tatt">
+                <a href="#" data-tatt='chair'>The Chair</a>
+            </div>
+            <div class="tatt">
+                <a href="#" data-tatt='beer_towel'>The Beer Towel</a>
+            </div>
+            <div class="tatt">
+                <a href="#" data-tatt='flute'>The Flute</a>
+            </div>
+            <div class="tatt">
+                <a href="#" data-tatt='lamp'>The Lamp</a>
+            </div>
+            <div class="tatt">
+                <a href="#" data-tatt='nutcracker'>The Nutcracker</a>
+            </div>
+            <div id="info">
+                <a href="#">i</a>
+            </div>
+        </div>
+        <div id="the_tatts_viewer" class="the_tatts_page">
+            <img data-id="chair" src="images/chair.jpg">
+            <img data-id="beer_towel" src="images/beer_towel.jpg">
+            <img data-id="flute" src="images/flute.jpg">
+            <img data-id="lamp" src="images/lamp.jpg">
+            <img data-id="chair" src="images/chair.jpg">
+            <img data-id="nutcracker" src="images/nutcracker.jpg">
+        </div>
+        <div id="info_box">
+            <div>
+                OurTatts is a studio T-A-N Concept.
+                <br><br>
+                At any one time 3 of the treasures on here will have been bought by Nick, and 3 will have been bought by Tamsyn. <u>Everything is for sale</u> and we're deeply competitive as to who's items are more desireable.
+                <br><br>
+                Currently Tamsyn has sold &#163;0.00 more than Nick. All profit goes to charity.
+                <br><br>
+                Make your best offer on OurTatt.
+                <br><br>
+                Website background by the inimitable Dan Tobin Smith from his series The First Law of Kipple.
+            <div>
+        </div>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        <script>
+
+            $('document').ready(function() {
+            
+            	var touch_screen =  !window.PointerEvent ? true : false;
+
+                function random_num( min_num, max_num) {
+                    return (Math.floor(Math.random() * (max_num - min_num + 1)) + min_num);
+                }
+
+                // set styles
+                var random_num = random_num(1,4),
+                    theme = 'theme_' + random_num;
+
+                $('body').addClass(theme);
+                $('a').addClass(theme);
+                $('#mask').addClass(theme);
+                $('#the_tatts_title').addClass(theme);
+                $('#image_rollover').addClass(theme);
+                $('#info_box').addClass(theme);
+
+                // general page things...
+
+                $('.tatt a').click(function (event) {
+                    event.preventDefault();
+                    var image_id = $(this).data("tatt"),
+                        image = $('img[data-id="' + image_id + '"]');
+                    // hide all images, just in case...
+                    $('#the_tatts_viewer img').hide()
+                    // show image
+                    image.first().show();
+                    $('#mask').show();
+                });
+
+                $("#the_tatts_viewer").on( {
+                   'click': function() {
+                       var email = 'Nicholas Bell <nick@aufi.com>';
+                       var subject = 'OurTatts - Enquiry';
+                       var emailBody = '';
+                       window.location = 'mailto:' + email + '?subject=' + subject + '&body=' +   emailBody;
+                   },
+                   'touch': function() {
+                       var email = 'Nicholas Bell <nick@aufi.com>';
+                       var subject = 'OurTatts - Enquiry';
+                       var emailBody = '';
+                       window.location = 'mailto:' + email + '?subject=' + subject + '&body=' +   emailBody;
+                   },
+                   'mousemove': function(e) {
+                       if (!touch_screen) {
+                           $('#image_rollover').show();
+                           $('#image_rollover').css({
+                              left:  e.pageX + 5,
+                              top:   e.pageY + 5
+                           });
+                       };
+                   },
+                   'mouseleave':function(e) {
+                       if (!touch_screen) {
+                           $('#image_rollover').hide();
+                       };
+                   }
+                });
+
+                $('#info a').click(function (event) {
+                    $('#info_box').toggle();
+                    // $('body').click(function (event) {
+                    //     $('#info_box').hide();
+                    // })
+                });
+
+                $('#info_box').click(function (event) {
+                    $('#info_box').hide();
+                });
+
+
+                $('#mask').on( {
+                    'click': function() {
+                        $("#the_tatts_viewer img").hide();
+                        $('#info_box').hide();
+                        $('#mask').hide();
+                    }
+                });
+
+                $('body').show();
+
+            });
+        </script>
+    </body>
+</html>

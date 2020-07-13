@@ -1,0 +1,252 @@
+@font-face {
+  font-family: 'FortescuePro';
+  src: url("fonts/FortescuePro-Regular.otf") format("opentype");
+}
+
+/* theme 1 */
+body.theme_1 {
+    color: white;
+    background: url('images/background_1.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+a.theme_1, a:visited.theme_1, a:hover.theme_1 {
+    color: white;
+}
+
+a:hover.theme_1 {
+    border-bottom: #85C552;
+    border-bottom-style: solid;
+}
+
+#mask.theme_1 {
+    background-color: #85C552;
+}
+
+#the_tatts_title.theme_1 {
+    border-bottom: #85C552;
+    border-bottom-style: solid;
+}
+
+#image_rollover.theme_1 {
+    color: #85C552;
+}
+
+#info_box.theme_1 {
+    background-color: #85C552;
+    color: white;
+}
+
+/* theme 2 */
+body.theme_2 {
+    color: white;
+    background: url('images/background_2.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+a.theme_2, a:visited.theme_2, a:hover.theme_2 {
+    color: white;
+}
+
+a:hover.theme_2 {
+    border-bottom: seagreen;
+    border-bottom-style: solid;
+}
+
+#mask.theme_2 {
+    background-color: seagreen;
+}
+
+#the_tatts_title.theme_2 {
+    border-bottom: seagreen;
+    border-bottom-style: solid;
+}
+
+#image_rollover.theme_2 {
+    color: seagreen;
+}
+
+#info_box.theme_2 {
+    background-color: seagreen;
+    color: white;
+}
+
+/* theme 3 */
+body.theme_3 {
+    color: white;
+    background: url('images/background_3.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+a.theme_3, a:visited.theme_3, a:hover.theme_3 {
+    color: white;
+}
+
+a:hover.theme_3 {
+    border-bottom: tomato;
+    border-bottom-style: solid;
+}
+
+#mask.theme_3 {
+    background-color: tomato;
+}
+
+#the_tatts_title.theme_3 {
+    border-bottom: tomato;
+    border-bottom-style: solid;
+}
+
+#image_rollover.theme_3 {
+    color: tomato;
+}
+
+#info_box.theme_3 {
+    background-color: tomato;
+    color: white;
+}
+
+/* theme 4 */
+body.theme_4 {
+    color: white;
+    background: url('images/background_4.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+a.theme_4, a:visited.theme_4, a:hover.theme_4 {
+    color: white;
+}
+
+a:hover.theme_4 {
+    border-bottom: coral;
+    border-bottom-style: solid;
+}
+
+#mask.theme_4 {
+    background-color: coral;
+}
+
+#the_tatts_title.theme_4 {
+    border-bottom: coral;
+    border-bottom-style: solid;
+}
+
+#image_rollover.theme_4 {
+    color: coral;
+}
+
+#info_box.theme_4 {
+    background-color: coral;
+    color: white;
+}
+
+
+/* MAIN */
+
+body {
+    font-family: 'FortescuePro', serif;
+    font-size: 60px;
+    padding: 45px;
+    margin: 0px;
+    background-color: white;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    display: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    border-bottom-style: solid;
+}
+
+#info {
+    border: 4px solid white;
+    height: 52px;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    width: 52px;
+    text-align: center;
+    line-height: 65px;
+    margin-top: 25px;
+}
+
+#info_box {
+    display: none;
+    position: absolute;
+    width: 75%;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 10;
+    padding: 40px;
+    font-size: xx-large;
+    height: fit-content;
+    text-align: center;
+    cursor: url('images/cross.png'), crosshair;
+}
+
+#mask {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    opacity: 0.6;
+    left: 0;
+    top: 0;
+    display: none;
+    cursor: url('images/cross.png'), crosshair;
+    z-index: 5;
+}
+
+#the_tatts_title {
+    margin-bottom: 50px;
+    width: min-content;
+    border-bottom-style: solid;
+}
+
+#the_tatts {
+    overflow: scroll;
+}
+
+.tatt {
+    padding-bottom: 20px;
+}
+
+#the_tatts_viewer img {
+    display: none;
+    position: absolute;
+    width: 50%;
+    margin: auto;
+    left: 30%;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 10;
+    padding: 20px;
+}
+
+#the_tatts_viewer {
+    z-index: 10;
+    cursor: none;
+}
+
+#image_rollover {
+    display: none;
+    position: absolute;
+    z-index:15;
+    font-size: x-large;
+}
+
+@media only screen and (max-width: 550px) {
+    #the_tatts_viewer img {
+        width: 90%;
+        margin: auto;
+        left: 0;
+    }
+}
